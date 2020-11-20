@@ -1,0 +1,57 @@
+{
+  "version": "0.1.0",
+  "name": "freeform-input",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/freeform-input.esm.js",
+  "typings": "dist/index.d.ts",
+  "repository": "github:PsychoLlama/freeform-input",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "author": "Jesse Gibson <JesseTheGibson@gmail.com>",
+  "size-limit": [
+    {
+      "path": "dist/freeform-input.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/freeform-input.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.8.0",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "husky": "^4.3.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "size-limit": "^4.8.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.1.2"
+  }
+}
