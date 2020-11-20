@@ -54,8 +54,9 @@ export default class FreeformInput extends React.Component<Props, State> {
 }
 
 interface Props
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'> {
   onChange?: (value: string) => void;
+  value: number | string;
 }
 
 interface State {
