@@ -34,7 +34,19 @@
   "jest": {
     "setupFiles": [
       "./src/setupTests.tsx"
-    ]
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "./src/Input.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 100,
+        "functions": 100,
+        "branches": 100,
+        "lines": 100
+      }
+    }
   },
   "author": "Jesse Gibson <JesseTheGibson@gmail.com>",
   "size-limit": [
