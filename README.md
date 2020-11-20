@@ -1,6 +1,11 @@
 # React Freeform Input
 A controlled `<input>` posing as an uncontrolled input.
 
+## Install
+```bash
+$ yarn add freeform-input
+```
+
 ## Purpose
 React form controls fall in two categories:
 [controlled](https://reactjs.org/docs/forms.html#controlled-components) and
