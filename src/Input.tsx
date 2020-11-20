@@ -1,8 +1,14 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, {
+  Component,
+  FocusEvent,
+  ChangeEvent,
+  KeyboardEvent,
+  InputHTMLAttributes,
+} from 'react';
 
 const noop = () => {};
 
-export default class FreeformInput extends React.Component<Props, State> {
+class FreeformInput extends Component<Props, State> {
   static defaultProps = {
     onFocus: noop,
     onBlur: noop,
@@ -27,28 +33,29 @@ export default class FreeformInput extends React.Component<Props, State> {
         onBlur={this.exitEditMode}
         onKeyDown={this.detectSubmission}
         value={this.state.mode === Mode.Active ? this.state.value : value}
+        ref={this.props.__inputRef}
       />
     );
   }
 
-  enterEditMode = (event: React.FocusEvent<HTMLInputElement>) => {
+  enterEditMode = (event: FocusEvent<HTMLInputElement>) => {
     this.setState({ mode: Mode.Active, value: this.props.value });
     this.props.onFocus!(event);
   };
 
-  updateLocalSnapshot = (event: React.ChangeEvent<HTMLInputElement>) => {
+  updateLocalSnapshot = (event: ChangeEvent<HTMLInputElement>) => {
     this.setState({ value: event.currentTarget.value });
     this.props.onInput!(event);
   };
 
-  exitEditMode = (event: React.FocusEvent<HTMLInputElement>) => {
+  exitEditMode = (event: FocusEvent<HTMLInputElement>) => {
     this.setState({ mode: Mode.Dormant });
     this.submit();
 
     this.props.onBlur!(event);
   };
 
-  detectSubmission = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  detectSubmission = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') this.submit();
     this.props.onKeyPress!(event);
   };
@@ -66,6 +73,7 @@ interface Props
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'> {
   onChange?: (value: string) => void;
   value: number | string;
+  __inputRef: React.Ref<HTMLInputElement>;
 }
 
 interface State {
@@ -77,3 +85,9 @@ enum Mode {
   Active,
   Dormant,
 }
+
+export default React.forwardRef(
+  (props: Omit<Props, '__inputRef'>, ref: React.Ref<HTMLInputElement>) => (
+    <FreeformInput {...props} __inputRef={ref} />
+  )
+);

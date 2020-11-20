@@ -14,7 +14,7 @@ describe('Input', () => {
       ...overrides,
     };
 
-    const output = shallow(<Input {...props} />);
+    const output = shallow(<Input {...props} />).dive();
 
     const simulate = {
       focus: () => output.simulate('focus'),
@@ -132,5 +132,12 @@ describe('Input', () => {
 
     simulate.keypress('Enter');
     expect(props.onChange).toHaveBeenCalledWith('new content');
+  });
+
+  it('attaches the ref handler', () => {
+    const ref = jest.fn();
+    const { output } = setup({ ref });
+
+    expect(output.getElement()).toHaveProperty('ref', ref);
   });
 });
