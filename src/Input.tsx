@@ -23,7 +23,7 @@ class FreeformInput extends Component<Props, State> {
   };
 
   render() {
-    const { value, onChange, ...props } = this.props;
+    const { value, onChange, __inputRef, ...props } = this.props;
 
     return (
       <input
@@ -33,7 +33,7 @@ class FreeformInput extends Component<Props, State> {
         onBlur={this.exitEditMode}
         onKeyDown={this.detectSubmission}
         value={this.state.mode === Mode.Active ? this.state.value : value}
-        ref={this.props.__inputRef}
+        ref={__inputRef}
       />
     );
   }
