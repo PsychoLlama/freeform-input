@@ -6,6 +6,7 @@ export default class FreeformInput extends React.Component<Props, State> {
   static defaultProps = {
     onFocus: noop,
     onBlur: noop,
+    onKeyPress: noop,
     onChange: noop,
     onInput: noop,
   };
@@ -24,16 +25,14 @@ export default class FreeformInput extends React.Component<Props, State> {
         onFocus={this.enterEditMode}
         onInput={this.updateLocalSnapshot}
         onBlur={this.exitEditMode}
+        onKeyDown={this.detectSubmission}
         value={this.state.mode === Mode.Active ? this.state.value : value}
       />
     );
   }
 
   enterEditMode = (event: React.FocusEvent<HTMLInputElement>) => {
-    const snapshot =
-      typeof this.props.value !== 'undefined' ? this.props.value : '';
-
-    this.setState({ mode: Mode.Active, value: snapshot });
+    this.setState({ mode: Mode.Active, value: this.props.value });
     this.props.onFocus!(event);
   };
 
@@ -44,12 +43,22 @@ export default class FreeformInput extends React.Component<Props, State> {
 
   exitEditMode = (event: React.FocusEvent<HTMLInputElement>) => {
     this.setState({ mode: Mode.Dormant });
-
-    if (this.state.value !== this.props.value) {
-      this.props.onChange!(this.state.value);
-    }
+    this.submit();
 
     this.props.onBlur!(event);
+  };
+
+  detectSubmission = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') this.submit();
+    this.props.onKeyPress!(event);
+  };
+
+  submit = () => {
+    const { value } = this.state;
+
+    if (this.props.value !== value) {
+      this.props.onChange!(value);
+    }
   };
 }
 

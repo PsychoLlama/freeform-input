@@ -19,6 +19,7 @@ describe('Input', () => {
     const simulate = {
       focus: () => output.simulate('focus'),
       blur: () => output.simulate('blur'),
+      keypress: (key: string) => output.simulate('keyDown', { key }),
       input: (value: string) =>
         output.simulate('input', {
           currentTarget: { value },
@@ -75,12 +76,14 @@ describe('Input', () => {
     const { simulate } = setup({
       onFocus: undefined,
       onBlur: undefined,
+      onKeyPress: undefined,
       onInput: undefined,
       onChange: undefined,
     });
 
     const events = () => {
       simulate.focus();
+      simulate.keypress('k');
       simulate.input('bacon');
       simulate.blur();
     };
@@ -116,5 +119,18 @@ describe('Input', () => {
     simulate.input('new content');
     simulate.blur();
     expect(output.prop('value')).toBe(props.value);
+  });
+
+  it('emits a change event when you press enter', () => {
+    const { simulate, props } = setup();
+
+    simulate.focus();
+    simulate.input('new content');
+
+    simulate.keypress('a');
+    expect(props.onChange).not.toHaveBeenCalled();
+
+    simulate.keypress('Enter');
+    expect(props.onChange).toHaveBeenCalledWith('new content');
   });
 });
