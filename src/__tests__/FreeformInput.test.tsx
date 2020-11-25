@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Input from '../Input';
+import FreeformInput from '../FreeformInput';
 
-describe('Input', () => {
+describe('FreeformInput', () => {
   function setup<Props>(overrides?: Props) {
     const props = {
       value: 'controlled-value',
@@ -14,7 +14,7 @@ describe('Input', () => {
       ...overrides,
     };
 
-    const output = shallow(<Input {...props} />).dive();
+    const output = shallow(<FreeformInput {...props} />).dive();
 
     const simulate = {
       focus: () => output.simulate('focus'),
