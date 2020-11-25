@@ -91,16 +91,6 @@ describe('FreeformInput', () => {
     expect(events).not.toThrow();
   });
 
-  it('ignores changes if the new input matches props', () => {
-    const { simulate, props } = setup();
-
-    simulate.focus();
-    simulate.input(props.value);
-    simulate.blur();
-
-    expect(props.onChange).not.toHaveBeenCalled();
-  });
-
   it('uses state as the controlled value in edit mode', () => {
     const { simulate, output } = setup();
 

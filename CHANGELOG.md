@@ -9,6 +9,9 @@ a Changelog](https://keepachangelog.com/en/1.0.0/) and the project adheres to
 Fixed:
 - React warning complaining about a hidden ref property.
 
+Changed:
+- Now `onChange` fires any time the user stops editing, even if the value is identical.
+
 ## [0.1.0] - 2020-11-20
 Initial release.
 

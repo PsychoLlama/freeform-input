@@ -61,11 +61,7 @@ class FreeformInput extends Component<Props, State> {
   };
 
   submit = () => {
-    const { value } = this.state;
-
-    if (this.props.value !== value) {
-      this.props.onChange!(value);
-    }
+    this.props.onChange!(this.state.value);
   };
 }
 
