@@ -1,5 +1,19 @@
-# React Freeform Input
-A controlled `<input>` posing as an uncontrolled input.
+<div align="center">
+  <h1>React Freeform Input</h1>
+  <p>A controlled <code>&lt;input&gt;</code> posing as an uncontrolled input.</p>
+
+  <a href="https://github.com/PsychoLlama/freeform-input/actions?query=workflow%3ACI">
+    <img src="https://img.shields.io/github/workflow/status/PsychoLlama/freeform-input/CI/master" alt="build status" />
+  </a>
+
+  <a href="https://www.npmjs.com/package/freeform-input">
+    <img src="https://img.shields.io/npm/v/freeform-input" alt="npm version" />
+  </a>
+
+  <a href="https://bundlephobia.com/result?p=freeform-input">
+    <img src="https://img.shields.io/bundlephobia/minzip/freeform-input" alt="bundle size" />
+  </a>
+</div>
 
 ## Install
 ```bash
