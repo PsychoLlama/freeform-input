@@ -3,7 +3,7 @@
   <p>A controlled <code>&lt;input&gt;</code> posing as an uncontrolled input.</p>
 
   <a href="https://github.com/PsychoLlama/freeform-input/actions?query=workflow%3ACI">
-    <img src="https://img.shields.io/github/workflow/status/PsychoLlama/freeform-input/CI/master" alt="build status" />
+    <img src="https://img.shields.io/github/workflow/status/PsychoLlama/freeform-input/CI/main" alt="build status" />
   </a>
 
   <a href="https://www.npmjs.com/package/freeform-input">
