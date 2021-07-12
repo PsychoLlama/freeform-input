@@ -2,9 +2,6 @@
   "extends": [
     "config:base"
   ],
-  "schedule": [
-    "on friday"
-  ],
   "ignorePaths": [
     "./example"
   ],
