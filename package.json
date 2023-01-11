@@ -65,7 +65,7 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "8.1.0",
+    "@size-limit/preset-small-lib": "8.1.1",
     "@types/enzyme": "3.10.12",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/react": "18.0.26",
