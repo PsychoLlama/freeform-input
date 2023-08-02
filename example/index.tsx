@@ -1,6 +1,7 @@
-import 'react-app-polyfill/ie11';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import Input from '../';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import Input from 'freeform-input';
 
-ReactDOM.render(<Input value="controlled" />, document.getElementById('root'));
+createRoot(document.getElementById('root')!).render(
+  <Input value="controlled" />,
+);

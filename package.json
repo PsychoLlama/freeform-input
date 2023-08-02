@@ -24,7 +24,8 @@
     "test:unit": "vitest --run --color --coverage",
     "test:lint": "eslint src --ext ts,tsx --color",
     "test:fmt": "prettier --check src",
-    "test": "run test:unit && run test:lint && run test:fmt"
+    "test": "run test:unit && run test:lint && run test:fmt",
+    "start": "vite example"
   },
   "husky": {
     "hooks": {
