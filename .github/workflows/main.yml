@@ -1,34 +1,13 @@
-name: CI
-on: [push]
+name: Test
+on: push
+
 jobs:
-  build:
-    name: Build, lint, and test on Node ${{ matrix.node }}
-
+  test:
+    name: Test
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node:
-          - 16.x
-          - 18.x
-          - 20.x
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Use Node ${{ matrix.node }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
-
-      - name: Lint
-        run: yarn lint
-
-      - name: Test
-        run: yarn test --ci --coverage
-
-      - name: Build
-        run: yarn build
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
+      - run: nix develop --command yarn install
+      - run: nix develop --command yarn pack
+      - run: nix develop --command yarn test

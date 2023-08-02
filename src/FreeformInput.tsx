@@ -1,10 +1,10 @@
-import React, {
-  Component,
+import type {
   FocusEvent,
   ChangeEvent,
   KeyboardEvent,
   InputHTMLAttributes,
 } from 'react';
+import React, { Component, forwardRef } from 'react';
 
 const noop = () => {};
 
@@ -82,8 +82,8 @@ enum Mode {
   Dormant,
 }
 
-export default React.forwardRef(
+export default forwardRef(
   (props: Omit<Props, '__inputRef'>, ref: React.Ref<HTMLInputElement>) => (
     <FreeformInput {...props} __inputRef={ref} />
-  )
+  ),
 );

@@ -1,16 +1,15 @@
+import FreeformInput from '../FreeformInput';
 import React from 'react';
 import { shallow } from 'enzyme';
-
-import FreeformInput from '../FreeformInput';
 
 describe('FreeformInput', () => {
   function setup<Props>(overrides?: Props) {
     const props = {
       value: 'controlled-value',
-      onChange: jest.fn(),
-      onFocus: jest.fn(),
-      onInput: jest.fn(),
-      onBlur: jest.fn(),
+      onChange: vi.fn(),
+      onFocus: vi.fn(),
+      onInput: vi.fn(),
+      onBlur: vi.fn(),
       ...overrides,
     };
 
@@ -125,7 +124,7 @@ describe('FreeformInput', () => {
   });
 
   it('attaches the ref handler', () => {
-    const ref = jest.fn();
+    const ref = vi.fn();
     const { output } = setup({ ref });
 
     expect(output.getElement()).toHaveProperty('ref', ref);
