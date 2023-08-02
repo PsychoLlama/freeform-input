@@ -2,6 +2,7 @@
   "version": "0.2.0",
   "name": "freeform-input",
   "license": "MIT",
+  "packageManager": "yarn@3.6.1",
   "main": "dist/index.js",
   "module": "dist/freeform-input.esm.js",
   "typings": "dist/index.d.ts",
