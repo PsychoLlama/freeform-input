@@ -85,5 +85,5 @@ enum Mode {
 export default forwardRef(
   (props: Omit<Props, '__inputRef'>, ref: React.Ref<HTMLInputElement>) => (
     <FreeformInput {...props} __inputRef={ref} />
-  ),
+  )
 );
