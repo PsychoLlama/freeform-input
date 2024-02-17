@@ -1,6 +1,6 @@
-import FreeformInput from '../FreeformInput';
 import React from 'react';
 import { shallow } from 'enzyme';
+import FreeformInput from '../FreeformInput';
 
 describe('FreeformInput', () => {
   function setup<Props>(overrides?: Props) {
