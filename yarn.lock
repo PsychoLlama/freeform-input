@@ -639,12 +639,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cheerio@npm:*":
-  version: 0.22.23
-  resolution: "@types/cheerio@npm:0.22.23"
+"@types/cheerio@npm:<1":
+  version: 0.22.35
+  resolution: "@types/cheerio@npm:0.22.35"
   dependencies:
     "@types/node": "npm:*"
-  checksum: 10c0/b1f1d6e4f08b8d7f231af3235ef7bc8410bceedd4aff5b0c0e732154bb2ea696cfec16bd0fbdfad9f082495f17f28e23a18d24a41622f3889d803c9fbebffe97
+  checksum: 10c0/648552e6b981185220b356634374aacdee31815ee55c9a6776bcbf7f8c217e54a3a3951d9929b403ca637190ba748f884e6126c730238c5704bf4488a47dedae
   languageName: node
   linkType: hard
 
@@ -658,12 +658,12 @@ __metadata:
   linkType: hard
 
 "@types/enzyme@npm:*, @types/enzyme@npm:^3.10.13":
-  version: 3.10.18
-  resolution: "@types/enzyme@npm:3.10.18"
+  version: 3.10.19
+  resolution: "@types/enzyme@npm:3.10.19"
   dependencies:
-    "@types/cheerio": "npm:*"
+    "@types/cheerio": "npm:<1"
     "@types/react": "npm:^16"
-  checksum: 10c0/c156d04e87dc4b01b5a8516bbcc2d127040506cf4d75efc2bb6ac9d4babc7db2895af207a6e95b68ff0f1f593bf84a6499417423b89294c1f0468d3809652dd2
+  checksum: 10c0/4bf7e30ffec4e154d24f9555dc2c7fab8463628e7aaf030005d06adb472e282a9a25ff6924a646bec47a5db241d82c54b4f81a20452b09e3ab6ca2960a730a12
   languageName: node
   linkType: hard
 
