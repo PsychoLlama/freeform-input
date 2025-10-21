@@ -8,7 +8,7 @@
   "types": "./src/index.tsx",
   "author": "Jesse Gibson <JesseTheGibson@gmail.com>",
   "repository": "github:PsychoLlama/freeform-input",
-  "packageManager": "yarn@4.1.0",
+  "packageManager": "yarn@4.10.3",
   "exports": {
     ".": {
       "require": "./dist/freeform-input.cjs",
