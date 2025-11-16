@@ -15,6 +15,12 @@
   </a>
 </div>
 
+## Project Status
+
+:no_entry: UNMAINTAINED
+
+React Hooks and AI tooling made this component cheap and not worth the overhead of a dependency. Plus, I'm rarely using React in my personal projects these days.
+
 ## Install
 
 ```bash
