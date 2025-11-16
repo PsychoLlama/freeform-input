@@ -2,8 +2,8 @@
   <h1>React Freeform Input</h1>
   <p>A controlled <code>&lt;input&gt;</code> posing as an uncontrolled input.</p>
 
-  <a href="https://github.com/PsychoLlama/freeform-input/actions?query=workflow%3ACI">
-    <img src="https://img.shields.io/github/workflow/status/PsychoLlama/freeform-input/CI/main" alt="build status" />
+  <a href="https://github.com/PsychoLlama/freeform-input/actions/workflows/main.yml">
+    <img src="https://github.com/PsychoLlama/freeform-input/actions/workflows/main.yml/badge.svg" alt="build status" />
   </a>
 
   <a href="https://www.npmjs.com/package/freeform-input">
@@ -16,11 +16,13 @@
 </div>
 
 ## Install
+
 ```bash
 $ yarn add freeform-input
 ```
 
 ## Purpose
+
 React form controls fall in two categories:
 [controlled](https://reactjs.org/docs/forms.html#controlled-components) and
 [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html). The
@@ -39,6 +41,7 @@ keystroke, state changes won't wipe out your user's changes, and intermediate
 edits don't violate validation rules.
 
 ## API
+
 This library is functionally identical to `<input>` save for one exception: it
 overrides `onChange`:
 
